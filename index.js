@@ -1,9 +1,18 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const { sendQuizResults } = require("./emailService");
+const cors = require("cors");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+app.use(
+  cors({
+    origin: "http://localhost:5173", // You can specify your frontend's URL here
+    methods: ["GET", "POST"],
+    allowedHeaders: ["Content-Type"],
+  })
+);
 
 app.use(bodyParser.json());
 

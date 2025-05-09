@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light only" />
+    <meta name="supported-color-schemes" content="light only" />
+    <style>
+      @media only screen and (max-width: 683px) {
+        .button-container td {
+          display: block !important;
+          width: 100% !important;
+          padding: 12px 0 !important;
+        }
+        .button-container a {
+          width: 100% !important;
+          display: block !important;
+        }
+      }
+    </style>
+
+    <title>Play Genius Results</title>
+  </head>
+  <body
+    style="
+      margin: 0;
+      padding: 0;
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      background-color: #fff;
+    "
+  >
+    <table
+      role="presentation"
+      width="100%"
+      cellpadding="0"
+      cellspacing="0"
+      border="0"
+      style="padding: 40px 20px; background-color: #fff"
+    >
+      <tr>
+        <td align="center">
+          <table
+            role="presentation"
+            width="600"
+            cellpadding="0"
+            cellspacing="0"
+            border="0"
+            style="width: 100%; max-width: 600px"
+          >
+            <!-- Intro Text -->
+            <tr>
+              <td style="padding: 20px 0">
+                <p style="margin-bottom: 18px"
+                  >Your results are just the beginning.</p
+                >
+                <p style="margin-bottom: 18px"
+                  >If the quiz has sparked a question or possibility, we've got
+                  the resources to help you keep going.</p
+                >
+                <p style="margin-bottom: 18px">Let's take a look...</p>
+              </td>
+            </tr>
+
+            <!-- Overall Percentage -->
+            <tr>
+              <td align="center" style="padding: 24px 0">
+                <p style="margin-bottom: 12px">Your Play Genius Score:</p>
+                <p
+                  ><span
+                    style="
+                      font-family: Georgia, serif;
+                      font-size: 48px;
+                      font-weight: 500;
+                      line-height: 45px;
+                      margin: 0;
+                    "
+                    >{{overallPercentage}}</span
+                  >%</p
+                >
+              </td>
+            </tr>
+
+            <!-- Category Scores -->
+            <tr>
+              <td style="padding: 24px 0">
+                <p
+                  style="
+                    text-align: center;
+                    margin-bottom: 20px;
+                    color: rgba(34, 34, 34, 0.7);
+                  "
+                  >These are your results grouped by categories:</p
+                >
+                <table
+                  role="presentation"
+                  width="100%"
+                  cellpadding="0"
+                  cellspacing="0"
+                  border="0"
+                >
+                  <tr
+                    ><td style="padding-bottom: 16px; text-align: center"
+                      >Physical Development: {{physical}} out of 15</td
+                    ></tr
+                  >
+                  <tr
+                    ><td style="padding-bottom: 16px; text-align: center"
+                      >Cognitive Development: {{cognitive}} out of 15</td
+                    ></tr
+                  >
+                  <tr
+                    ><td style="padding-bottom: 16px; text-align: center"
+                      >Social Development: {{social}} out of 15</td
+                    ></tr
+                  >
+                  <tr
+                    ><td style="padding-bottom: 16px; text-align: center"
+                      >Emotional Development: {{emotional}} out of 15</td
+                    ></tr
+                  >
+                  <tr
+                    ><td style="padding-bottom: 16px; text-align: center"
+                      >Systemic Development: {{systemic}} out of 15</td
+                    ></tr
+                  >
+                  <tr
+                    ><td style="padding-bottom: 16px; text-align: center"
+                      >Playful Behaviour: {{playful}} out of 15</td
+                    ></tr
+                  >
+                </table>
+              </td>
+            </tr>
+
+            <!-- Highest -->
+            <tr>
+              <td align="center" style="padding: 0">
+                <table
+                  width="100%"
+                  cellpadding="0"
+                  cellspacing="0"
+                  border="0"
+                  style="background-color: #f5fbf4; border-radius: 20px"
+                >
+                  <tr>
+                    <td align="center" style="padding: 20px">
+                      <p
+                        style="
+                          color: #026a67;
+                          font-weight: 500;
+                          margin-bottom: 12px;
+                        "
+                        >Your highest scoring category:</p
+                      >
+                      <p style="margin-bottom: 12px">{{highestTitle}}:</p>
+                      <p style="margin-bottom: 0">{{highestBody}}</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Spacer -->
+            <tr
+              ><td height="20" style="line-height: 20px; font-size: 0"
+                >&nbsp;</td
+              ></tr
+            >
+
+            <!-- Lowest -->
+            <tr>
+              <td align="center" style="padding: 0">
+                <table
+                  width="100%"
+                  cellpadding="0"
+                  cellspacing="0"
+                  border="0"
+                  style="background-color: #f4f6fe; border-radius: 20px"
+                >
+                  <tr>
+                    <td align="center" style="padding: 20px">
+                      <p
+                        style="
+                          color: #026a67;
+                          font-weight: 500;
+                          margin-bottom: 12px;
+                        "
+                        >Your lowest scoring category:</p
+                      >
+                      <p style="margin-bottom: 12px">{{lowestTitle}}:</p>
+                      <p style="margin-bottom: 0">{{lowestBody}}</p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Conclusion -->
+            <tr>
+              <td align="center" style="padding: 40px 20px">
+                <p style="text-align: center"
+                  >Now that you know {{highestTitle}} is your relatively
+                  strongest area of development, what ideas do you have for
+                  nurturing your {{lowestTitle}}?</p
+                >
+              </td>
+            </tr>
+
+            <!-- GIF -->
+            <tr>
+              <td align="center" style="padding: 20px 0">
+                <img
+                  src="cid:butterflyGif"
+                  alt="butterfly"
+                  style="display: block; max-width: 100%; height: auto"
+                />
+              </td>
+            </tr>
+
+            <!-- Explore Further -->
+            <tr>
+              <td
+                align="center"
+                style="
+                  padding: 40px 20px;
+                  border: 4px solid #fff4e1;
+                  border-radius: 20px;
+                "
+              >
+                <p
+                  style="
+                    color: #026a67;
+                    font-family: Georgia, serif;
+                    font-size: 20px;
+                    font-weight: 500;
+                    margin-bottom: 24px;
+                  "
+                  >Ready to explore further?</p
+                >
+                <p style="margin-bottom: 18px"
+                  >We offer bespoke options to individuals, groups and teams
+                  that will inspire you to play well and play better - at work,
+                  at home or anywhere you go.</p
+                >
+                <p style="margin-bottom: 24px"
+                  >Book a free discovery session with Portia to uncover the
+                  possibilities of Playful Leadership</p
+                >
+                <a
+                  href="https://calendly.com/portia-yz8/free-discovery-call-with-portia?month=2025-05"
+                  style="
+                    display: inline-block;
+                    padding: 16px 28px;
+                    background: #fcc55b;
+                    border-radius: 50px;
+                    color: #000;
+                    text-decoration: none;
+                  "
+                  >Let's chat!</a
+                >
+              </td>
+            </tr>
+
+            <!-- Spacer -->
+            <tr
+              ><td height="40" style="line-height: 40px; font-size: 0"
+                >&nbsp;</td
+              ></tr
+            >
+
+            <!-- School of Play Links -->
+            <tr>
+              <td
+                align="center"
+                style="
+                  padding: 40px 20px;
+                  border: 4px solid #fff4e1;
+                  border-radius: 20px;
+                "
+              >
+                <p
+                  style="
+                    color: #026a67;
+                    font-family: Georgia, serif;
+                    font-size: 20px;
+                    font-weight: 500;
+                    margin-bottom: 16px;
+                  "
+                >
+                  The School of Play
+                </p>
+                <p style="margin-bottom: 24px">Curious about what we offer?</p>
+
+                <table
+                  role="presentation"
+                  cellpadding="0"
+                  cellspacing="0"
+                  border="0"
+                  align="center"
+                  class="button-container"
+                  style="text-align: center"
+                >
+                  <tr>
+                    <td style="padding: 0 12px">
+                      <a
+                        href="https://theschoolofplay.org/courses/"
+                        style="
+                          display: inline-block;
+                          padding: 16px 28px;
+                          background: #fcc55b;
+                          border-radius: 50px;
+                          color: #000;
+                          text-decoration: none;
+                        "
+                      >
+                        Browse Courses
+                      </a>
+                    </td>
+                    <td style="padding: 0 12px">
+                      <a
+                        href="https://theschoolofplay.org/coaching/"
+                        style="
+                          display: inline-block;
+                          padding: 16px 28px;
+                          background: #fcc55b;
+                          border-radius: 50px;
+                          color: #000;
+                          text-decoration: none;
+                        "
+                      >
+                        Explore Coaching
+                      </a>
+                    </td>
+                    <td style="padding: 0 12px">
+                      <a
+                        href="https://theschoolofplay.org/who-we-are/"
+                        style="
+                          display: inline-block;
+                          padding: 16px 28px;
+                          background: #fcc55b;
+                          border-radius: 50px;
+                          color: #000;
+                          text-decoration: none;
+                        "
+                      >
+                        Our Values
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Squiggle -->
+            <tr>
+              <td align="center" style="padding: 20px 0">
+                <img
+                  src="cid:squiggle"
+                  alt="squiggle"
+                  style="display: block; max-width: 100%; height: auto"
+                />
+              </td>
+            </tr>
+
+            <!-- Retake Quiz -->
+            <tr>
+              <td align="center" style="padding: 32px 20px">
+                <p style="margin-bottom: 20px"
+                  >Remember to take the quiz in a few weeks to track your
+                  journey.</p
+                >
+                <a
+                  href="https://quiz.theschoolofplay.org"
+                  style="
+                    display: inline-block;
+                    padding: 16px 28px;
+                    background: #fcc55b;
+                    border-radius: 50px;
+                    color: #000;
+                    text-decoration: none;
+                  "
+                  >Re-take the Play Genius Quiz</a
+                >
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

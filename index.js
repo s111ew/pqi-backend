@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(
   cors({
-    origin: "http://localhost:5173", // You can specify your frontend's URL here
+    origin: "https://quiz.theschoolofplay.org",
     methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type"],
   })

@@ -104,7 +104,7 @@ async function sendQuizResults({ firstName, email, answers }) {
   const mailOptions = {
     from: process.env.FROM_EMAIL,
     to: email,
-    subject: "Your Quiz Results",
+    subject: `${firstName}, your results are in!`,
     html: inlinedHtml,
     attachments: [
       {

@@ -126,23 +126,6 @@ async function sendQuizResults({ firstName, email, answers }) {
     to: email,
     subject: `${firstName}, your results are in!`,
     html: inlinedHtml,
-    attachments: [
-      {
-        filename: "emailButterfly.png",
-        path: "./emailButterfly.png",
-        cid: "butterfly",
-      },
-      {
-        filename: "butterflyEmail.gif",
-        path: "./butterflyEmail.gif",
-        cid: "butterflyGif",
-      },
-      {
-        filename: "squiggleEmail.png",
-        path: "./squiggleEmail.png",
-        cid: "squiggle",
-      },
-    ],
   };
 
   return transporter.sendMail(mailOptions);

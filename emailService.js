@@ -82,6 +82,26 @@ function processAnswers(answers) {
     highestBody: categoryBodiesHighest[highestKey],
     lowestTitle: categoryDisplayNames[lowestKey],
     lowestBody: categoryBodiesLowest[lowestKey],
+    answerA: answers[0].answer,
+    answerB: answers[1].answer,
+    answerC: answers[2].answer,
+    answerD: answers[3].answer,
+    answerE: answers[4].answer,
+    answerF: answers[5].answer,
+    answerG: answers[6].answer,
+    answerH: answers[7].answer,
+    answerI: answers[8].answer,
+    answerJ: answers[9].answer,
+    answerK: answers[10].answer,
+    answerL: answers[11].answer,
+    answerM: answers[12].answer,
+    answerN: answers[13].answer,
+    answerO: answers[14].answer,
+    answerP: answers[15].answer,
+    answerQ: answers[16].answer,
+    answerR: answers[17].answer,
+    answerS: answers[18].answer,
+    answerT: answers[19].answer,
   };
 }
 
@@ -107,6 +127,11 @@ async function sendQuizResults({ firstName, email, answers }) {
     subject: `${firstName}, your results are in!`,
     html: inlinedHtml,
     attachments: [
+      {
+        filename: "emailButterfly.png",
+        path: "./emailButterfly.png",
+        cid: "butterfly",
+      },
       {
         filename: "butterflyEmail.gif",
         path: "./butterflyEmail.gif",

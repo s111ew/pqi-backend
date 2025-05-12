@@ -132,7 +132,7 @@
                       ></div>
                     </td>
                     <td style="margin-bottom: 16px; text-align: start">
-                      Physical Development: {{physical}} out of 15
+                      Physical Development: {{physical}} / 15
                     </td>
                   </tr>
                   <tr>
@@ -155,7 +155,7 @@
                       ></div>
                     </td>
                     <td style="margin-bottom: 16px; text-align: start">
-                      Cognitive Development: {{cognitive}} out of 15
+                      Cognitive Development: {{cognitive}} / 15
                     </td>
                   </tr>
                   <tr>
@@ -178,7 +178,7 @@
                       ></div>
                     </td>
                     <td style="margin-bottom: 16px; text-align: start">
-                      Social Development: {{social}} out of 15
+                      Social Development: {{social}} / 15
                     </td>
                   </tr>
                   <tr>
@@ -201,7 +201,7 @@
                       ></div>
                     </td>
                     <td style="margin-bottom: 16px; text-align: start">
-                      Emotional Development: {{emotional}} out of 15
+                      Emotional Development: {{emotional}} / 15
                     </td>
                   </tr>
                   <tr>
@@ -224,7 +224,7 @@
                       ></div>
                     </td>
                     <td style="margin-bottom: 16px; text-align: start">
-                      Systemic Development: {{systemic}} out of 15
+                      Systemic Development: {{systemic}} / 15
                     </td>
                   </tr>
                   <tr>
@@ -247,7 +247,7 @@
                       ></div>
                     </td>
                     <td style="margin-bottom: 16px; text-align: start">
-                      Playful Behaviour: {{playful}} out of 25
+                      Playful Behaviour: {{playful}} / 25
                     </td>
                   </tr>
                 </table>
@@ -274,7 +274,7 @@
                   style="background-color: {{highestColour}}; border-radius: 20px"
                 >
                   <tr>
-                    <td align="center" style="padding: 20px">
+                    <td align="center" style="padding: 20px 30px">
                       <p
                         style="
                           color: #026a67;
@@ -284,7 +284,9 @@
                         >Your highest scoring category:</p
                       >
                       <p style="margin-bottom: 12px">{{highestTitle}}:</p>
-                      <p style="margin-bottom: 0">{{highestBody}}</p>
+                      <p style="margin-bottom: 0; text-align: start"
+                        >{{highestBody}}</p
+                      >
                     </td>
                   </tr>
                 </table>
@@ -309,7 +311,7 @@
                   style="background-color: {{lowestColour}}; border-radius: 20px"
                 >
                   <tr>
-                    <td align="center" style="padding: 20px">
+                    <td align="center" style="padding: 20px 30px">
                       <p
                         style="
                           color: #026a67;
@@ -319,7 +321,9 @@
                         >Your lowest scoring category:</p
                       >
                       <p style="margin-bottom: 12px">{{lowestTitle}}:</p>
-                      <p style="margin-bottom: 0">{{lowestBody}}</p>
+                      <p style="margin-bottom: 0; text-align: start"
+                        >{{lowestBody}}</p
+                      >
                     </td>
                   </tr>
                 </table>
@@ -329,7 +333,7 @@
             <!-- Conclusion -->
             <tr>
               <td align="center" style="padding: 40px 20px">
-                <p style="text-align: center"
+                <p style="text-align: center; font-weight: 600"
                   >Now that you know {{highestTitle}} is your relatively
                   strongest area of development, what ideas do you have for
                   nurturing your {{lowestTitle}}?</p
@@ -528,38 +532,55 @@
 
             <tr>
               <td style="width: 50%; vertical-align: top">
-                <h4>Physical Development</h4>
+                <h4 style="color: rgba(34, 34, 34, 0.7)"
+                  >Physical Development</h4
+                >
                 <ul>
-                  <li>I am fit and healthy: {{answerA}} out of 5</li>
-                  <li>I am calm and confident: {{answerB}} out of 5</li>
-                  <li>I am agile: {{answerC}} out of 5</li>
+                  <li style="color: rgba(34, 34, 34, 0.7)"
+                    >I am fit and healthy: {{answerA}} / 5</li
+                  >
+                  <li style="color: rgba(34, 34, 34, 0.7)"
+                    >I am calm and confident: {{answerB}} / 5</li
+                  >
+                  <li style="color: rgba(34, 34, 34, 0.7)"
+                    >I am agile: {{answerC}} / 5</li
+                  >
                 </ul>
               </td>
             </tr>
 
             <tr
               ><td style="width: 50%; vertical-align: top">
-                <h4>Cognitive Development</h4>
+                <h4 style="color: rgba(34, 34, 34, 0.7)"
+                  >Cognitive Development</h4
+                >
                 <ul>
-                  <li>I am curious: {{answerD}} out of 5</li>
-                  <li>I think for myself: {{answerE}} out of 5</li>
-                  <li>I am a good communicator: {{answerF}} out of 5</li>
+                  <li style="color: rgba(34, 34, 34, 0.7)"
+                    >I am curious: {{answerD}} / 5</li
+                  >
+                  <li style="color: rgba(34, 34, 34, 0.7)"
+                    >I think for myself: {{answerE}} / 5</li
+                  >
+                  <li style="color: rgba(34, 34, 34, 0.7)"
+                    >I am a good communicator: {{answerF}} / 5</li
+                  >
                 </ul>
               </td></tr
             >
 
             <tr
               ><td style="width: 50%; vertical-align: top">
-                <h4>Social Development</h4>
+                <h4 style="color: rgba(34, 34, 34, 0.7)">Social Development</h4>
                 <ul>
-                  <li>I work well with others: {{answerG}} out of 5</li>
-                  <li
+                  <li style="color: rgba(34, 34, 34, 0.7)"
+                    >I work well with others: {{answerG}} / 5</li
+                  >
+                  <li style="color: rgba(34, 34, 34, 0.7)"
                     >I understand the role of rules and boundaries: {{answerH}}
-                    out of 5</li
+                    / 5</li
                   >
-                  <li
-                    >I get the support I need from others: {{answerI}} out of
-                    5</li
+                  <li style="color: rgba(34, 34, 34, 0.7)"
+                    >I get the support I need from others: {{answerI}} / 5</li
                   >
                 </ul>
               </td></tr
@@ -567,40 +588,61 @@
 
             <tr
               ><td style="width: 50%; vertical-align: top">
-                <h4>Emotional Development</h4>
+                <h4 style="color: rgba(34, 34, 34, 0.7)"
+                  >Emotional Development</h4
+                >
                 <ul>
-                  <li>I am emotionally self aware: {{answerJ}} out of 5</li>
-                  <li>I manage my emotions: {{answerK}} out of 5</li>
-                  <li>I feel joy: {{answerL}} out of 5</li>
+                  <li style="color: rgba(34, 34, 34, 0.7)"
+                    >I am emotionally self aware: {{answerJ}} / 5</li
+                  >
+                  <li style="color: rgba(34, 34, 34, 0.7)"
+                    >I manage my emotions: {{answerK}} / 5</li
+                  >
+                  <li style="color: rgba(34, 34, 34, 0.7)"
+                    >I feel joy: {{answerL}} / 5</li
+                  >
                 </ul>
               </td></tr
             >
 
             <tr>
               <td style="width: 50%; vertical-align: top">
-                <h4>Systemic Development</h4>
+                <h4 style="color: rgba(34, 34, 34, 0.7)"
+                  >Systemic Development</h4
+                >
                 <ul>
-                  <li
-                    >I acknowledge things as they are: {{answerM}} out of 5</li
+                  <li style="color: rgba(34, 34, 34, 0.7)"
+                    >I acknowledge things as they are: {{answerM}} / 5</li
                   >
-                  <li>I trust myself: {{answerN}} out of 5</li>
-                  <li>I belong: {{answerO}} out of 5</li>
+                  <li style="color: rgba(34, 34, 34, 0.7)"
+                    >I trust myself: {{answerN}} / 5</li
+                  >
+                  <li style="color: rgba(34, 34, 34, 0.7)"
+                    >I belong: {{answerO}} / 5</li
+                  >
                 </ul>
               </td>
             </tr>
 
             <tr>
               <td style="width: 50%; vertical-align: top">
-                <h4>Playful Behaviours</h4>
+                <h4 style="color: rgba(34, 34, 34, 0.7)">Playful Behaviours</h4>
                 <ul>
-                  <li>I am resourceful: {{answerP}} out of 5</li>
-                  <li>I am responsible: {{answerQ}} out of 5</li>
-                  <li
-                    >I am respectful of myself and others: {{answerR}} out of
-                    5</li
+                  <li style="color: rgba(34, 34, 34, 0.7)"
+                    >I am resourceful: {{answerP}} / 5</li
                   >
-                  <li>I am resilient: {{answerS}} out of 5</li>
-                  <li>I am real: {{answerT}} out of 5</li>
+                  <li style="color: rgba(34, 34, 34, 0.7)"
+                    >I am responsible: {{answerQ}} / 5</li
+                  >
+                  <li style="color: rgba(34, 34, 34, 0.7)"
+                    >I am respectful of myself and others: {{answerR}} / 5</li
+                  >
+                  <li style="color: rgba(34, 34, 34, 0.7)"
+                    >I am resilient: {{answerS}} / 5</li
+                  >
+                  <li style="color: rgba(34, 34, 34, 0.7)"
+                    >I am real: {{answerT}} / 5</li
+                  >
                 </ul>
               </td>
             </tr>

@@ -17,6 +17,15 @@ const categoryDisplayNames = {
   playful: "Playful Behaviours",
 };
 
+const categoryColours = {
+  physical: "rgba(132, 186, 121, 0.1)",
+  cognitive: "rgba(180, 133, 214, 0.1)",
+  social: "rgba(255, 168, 118, 0.1)",
+  emotional: "rgba(155, 176, 239, 0.1)",
+  systemic: "rgba(251, 153, 196, 0.1)",
+  playful: "rgba(234, 215, 42, 0.1)",
+};
+
 const categoryBodiesHighest = {
   physical:
     "Physical movement is your thing! It helps you think and be at your best. You take pride in your physical health. It is very important to you.You are grounded and live in the present moment. You are open and willing try new things. You delight in pushing yourself to test your limits.",
@@ -82,6 +91,8 @@ function processAnswers(answers) {
     highestBody: categoryBodiesHighest[highestKey],
     lowestTitle: categoryDisplayNames[lowestKey],
     lowestBody: categoryBodiesLowest[lowestKey],
+    highestColour: categoryColours[highestKey],
+    lowestColour: categoryColours[lowestKey],
     answerA: answers[0].answer,
     answerB: answers[1].answer,
     answerC: answers[2].answer,

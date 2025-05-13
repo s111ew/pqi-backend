@@ -17,15 +17,6 @@ const categoryDisplayNames = {
   playful: "Playful Behaviours",
 };
 
-const categoryColours = {
-  physical: "rgba(132, 186, 121, 0.1)",
-  cognitive: "rgba(180, 133, 214, 0.1)",
-  social: "rgba(255, 168, 118, 0.1)",
-  emotional: "rgba(155, 176, 239, 0.1)",
-  systemic: "rgba(251, 153, 196, 0.1)",
-  playful: "rgba(234, 215, 42, 0.1)",
-};
-
 const categoryBodiesHighest = {
   physical:
     "Physical movement is your thing! It helps you think and be at your best. You take pride in your physical health. It is very important to you.You are grounded and live in the present moment. You are open and willing try new things. You delight in pushing yourself to test your limits.",
@@ -39,24 +30,39 @@ const categoryBodiesHighest = {
     "You are passionate about people. You are thrive on collaboration and conflict resolution and everything in between. You understand and respect rules and boundaries. You seek help and support from those around when needed.",
   playful:
     "You can find the answer to any problem or situation and help make things better. You take responsibility for your feelings, thoughts and actions. You come from a place of mutual respect in your interactions. You almost never give up and try, try again - differently. You talk your talk, walk you walk and dance your dance. You are you.",
+  max: "You really do love to play! Perhaps you've always lived to feel joy or may be you've learned to lead a playful life in spite of personal challenges. Either way, you are highly curious and motivated to do whatever it takes to be the best possible version yourself. And have fun along the way, of course!",
 };
 
 const categoryBodiesLowest = {
   physical:
     "You enjoy exercising your mind over exercising your body. You view your body as simply a means for getting around. It's your mind that gets you from A to B. You may feel anxious at times. Uncertainty is your nemesis. You prefer sticking with what you know instead of venturing into the unknown.",
   emotional:
-    "You tend to find it difficult to deal with emotions - in yourself and in others. There are times you don't know how you really feel. You may find it a struggle to feel joy and enjoy yourself and life itself.",
+    "Emotions can be a tricky thing. Even at the best of times, you may find it difficult to deal with emotions - in yourself and in others. There are times you don't know how you really feel. Sometimes it is difficult to enjoy yourself. You may struggle to feel joy. ",
   cognitive:
     "You prefer to accept things are they are instead of wondering how things can be different. You're not keen on change or new experiences. You keep your opinions to yourself. It is not easy to share what you really think. You prefer to go with the flow to avoid conflict.",
   systemic:
-    "You find it hard to accept people and situations as they are. You tend to second-guess people and things. You find it difficult to trust yourself. You tend to feel like a fish out of water when it comes to belonging in groups and communities.",
+    "Sometimes it isn't easy to accept people and situations just as they are. You may prefer wishful thinking. You may struggle to trust yourself and your decisions. At times you feel like a fish out of water when it comes to fitting in in groups and communities.",
   social:
-    "You prefer to work on your own than with others. You tend to challenge rules and boundaries because you view them as constraining rather than enabling. You don't feel supported by those around you and tend to be unwilling to ask for help when you need it.",
+    "You prefer to work on your own than with others. You tend to challenge rules and boundaries because you view them as constraining rather than enabling. You don't feel supported by those around you and prefer not to ask for help even if you may need it.",
   playful:
-    "You struggle to solve problems or resolve situations. You don't take responsibility for your feelings, thoughts and actions. You don't respect yourself and / or others. It is difficult for you to bounce back from challenges and difficulties. You hide your authentic self from others and possibly also yourself.",
+    "Solving challenging problems can sometimes feel more like punishment than play. It's not always easy to take responsibility for your feelings, thoughts and actions. You sometimes struggle to respect yourself and / or others. It can be difficult for you to bounce back from challenges and difficulties. It is easier to hide your authentic self from others and even possibly from yourself.",
+  min: "It's possible that play doesn't come easily. Perhaps you weren't encouraged or allowed to play much as a child. Or may be there weren't many chances to enjoy yourself. Thanks to the neuroplasticity of the human mind and the incredible capacity of the human heart, it's never too late to play more as an adult. For sure, it's always a good time to start from where you are.",
+};
+
+const categoryColours = {
+  physical: "rgba(132, 186, 121, 0.1)",
+  cognitive: "rgba(180, 133, 214, 0.1)",
+  social: "rgba(255, 168, 118, 0.1)",
+  emotional: "rgba(155, 176, 239, 0.1)",
+  systemic: "rgba(251, 153, 196, 0.1)",
+  playful: "rgba(234, 215, 42, 0.1)",
+  minMax: "rgba(2, 106, 103, 0.1)",
 };
 
 function processAnswers(answers) {
+  let isMax = false;
+  let isMin = false;
+
   const categoryScores = {
     physical: 0,
     cognitive: 0,
@@ -75,6 +81,12 @@ function processAnswers(answers) {
     }
   }
 
+  if (overallTotal === 100) {
+    isMax = true;
+  } else if (overallTotal === 20) {
+    isMin = true;
+  }
+
   const sorted = Object.entries(categoryScores).sort((a, b) => b[1] - a[1]);
   const [highestKey, highestScore] = sorted[0];
   const [lowestKey, lowestScore] = sorted[sorted.length - 1];
@@ -87,11 +99,38 @@ function processAnswers(answers) {
     emotional: categoryScores.emotional,
     systemic: categoryScores.systemic,
     playful: categoryScores.playful,
-    highestTitle: categoryDisplayNames[highestKey],
-    highestBody: categoryBodiesHighest[highestKey],
-    lowestTitle: categoryDisplayNames[lowestKey],
-    lowestBody: categoryBodiesLowest[lowestKey],
-    highestColour: categoryColours[highestKey],
+    highestTitle: () => {
+      if (isMax || isMin) {
+        return "";
+      } else {
+        categoryDisplayNames[highestKey];
+      }
+    },
+    highestBody: () => {
+      if (isMax) {
+        return categoryBodiesHighest["max"];
+      } else if (isMin) {
+        return categoryBodiesLowest["min"];
+      } else {
+        categoryBodiesHighest[highestKey];
+      }
+    },
+    lowestTitle: () => {
+      if (isMax || isMin) {
+        return "";
+      } else {
+        categoryDisplayNames[lowestKey];
+      }
+    },
+    lowestBody: () => {
+      if (isMax || isMin) {
+        return "";
+      } else {
+        categoryBodiesLowest[lowestKey];
+      }
+    },
+    highestColour:
+      isMax || isMin ? categoryColours["minMax"] : categoryColours[highestKey],
     lowestColour: categoryColours[lowestKey],
     answerA: answers[0].answer,
     answerB: answers[1].answer,
@@ -113,6 +152,7 @@ function processAnswers(answers) {
     answerR: answers[17].answer,
     answerS: answers[18].answer,
     answerT: answers[19].answer,
+    isHidden: isMax || isMin ? "display: none" : "",
   };
 }
 

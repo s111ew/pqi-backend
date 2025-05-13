@@ -320,7 +320,8 @@
                         "
                         >Your highest scoring category:</p
                       >
-                      <p style="margin-bottom: 12px; font-weight: 600"
+                      <p
+                        style="margin-bottom: 12px; font-weight: 600; {{isHidden}}"
                         >{{highestTitle}}:</p
                       >
                       <p style="margin-bottom: 0; text-align: start"
@@ -347,7 +348,7 @@
                   cellpadding="0"
                   cellspacing="0"
                   border="0"
-                  style="background-color: {{lowestColour}}; border-radius: 20px"
+                  style="background-color: {{lowestColour}}; border-radius: 20px; {{isHidden}}"
                 >
                   <tr>
                     <td align="center" style="padding: 20px 30px">
@@ -373,7 +374,7 @@
 
             <!-- Conclusion -->
             <tr>
-              <td align="center" style="padding: 40px 20px">
+              <td align="center" style="padding: 40px 20px; {{isHidden}}">
                 <p style="text-align: center; font-weight: 600"
                   >Now that you know {{highestTitle}} is your relatively
                   strongest area of development, what ideas do you have for

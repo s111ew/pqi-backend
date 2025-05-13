@@ -152,7 +152,7 @@ function processAnswers(answers) {
     answerR: answers[17].answer,
     answerS: answers[18].answer,
     answerT: answers[19].answer,
-    isHidden: isMax || isMin ? "display: none" : "",
+    isHidden: isMax || isMin ? "display: none;" : "",
   };
 }
 

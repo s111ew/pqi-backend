@@ -103,7 +103,7 @@ function processAnswers(answers) {
       if (isMax || isMin) {
         return "";
       } else {
-        categoryDisplayNames[highestKey];
+        return categoryDisplayNames[highestKey];
       }
     },
     highestBody: () => {
@@ -112,21 +112,21 @@ function processAnswers(answers) {
       } else if (isMin) {
         return categoryBodiesLowest["min"];
       } else {
-        categoryBodiesHighest[highestKey];
+        return categoryBodiesHighest[highestKey];
       }
     },
     lowestTitle: () => {
       if (isMax || isMin) {
         return "";
       } else {
-        categoryDisplayNames[lowestKey];
+        return categoryDisplayNames[lowestKey];
       }
     },
     lowestBody: () => {
       if (isMax || isMin) {
         return "";
       } else {
-        categoryBodiesLowest[lowestKey];
+        return categoryBodiesLowest[lowestKey];
       }
     },
     highestColour:

@@ -19,34 +19,34 @@ const categoryDisplayNames = {
 
 const categoryBodiesHighest = {
   physical:
-    "Physical movement is your thing! It helps you think and be at your best. You take pride in your physical health. It is very important to you.You are grounded and live in the present moment. You are open and willing try new things. You delight in pushing yourself to test your limits.",
+    "Physical movement is your thing! It helps you think and be at your best. You take pride in your physical health. It is very important to you. You are grounded and live in the present moment. You are open and willing to try new things. You delight in pushing yourself to test your limits.",
   emotional:
     "You feel all your feels and can name your emotions as they emerge. You remain grounded in spite of internal and external turmoil. You are able to feel joy and enjoy yourself and life itself.",
   cognitive:
-    "You are curious about everything! Your mind races at a hundred miles an hour. Problem solving is your superpower.  No problem too big or too small. You value logical reasoning over jumping to conclusions. You think for yourself. You express yourself clearly to others.",
+    "You are curious about everything! Your mind races at a hundred miles an hour. Problem solving is your superpower. No problem too big or too small. You value logical reasoning over jumping to conclusions. You think for yourself. You express yourself clearly to others.",
   systemic:
-    "You recognise there are things you can change and accept things you cannot not. You trust yourself in distinguishing between the two. You know that everyone and everything has a place and that a sense of belonging begins with yourself.",
+    "You recognise there are things you can change and accept things you cannot. You trust yourself in distinguishing between the two. You know that everyone and everything has a place and that a sense of belonging begins with yourself.",
   social:
-    "You are passionate about people. You are thrive on collaboration and conflict resolution and everything in between. You understand and respect rules and boundaries. You seek help and support from those around when needed.",
+    "You are passionate about people. You thrive on collaboration and conflict resolution and everything in between. You understand and respect rules and boundaries. You seek help and support from those around when needed.",
   playful:
     "You can find the answer to any problem or situation and help make things better. You take responsibility for your feelings, thoughts and actions. You come from a place of mutual respect in your interactions. You almost never give up and try, try again - differently. You talk your talk, walk you walk and dance your dance. You are you.",
-  max: "You really do love to play! Perhaps you've always lived to feel joy or may be you've learned to lead a playful life in spite of personal challenges. Either way, you are highly curious and motivated to do whatever it takes to be the best possible version yourself. And have fun along the way, of course!",
+  max: "You really do love to play! Perhaps you've always lived to feel joy or maybe you've learned to lead a playful life in spite of personal challenges. Either way, you are highly curious and motivated to do whatever it takes to be the best possible version of yourself. And have fun along the way, of course!",
 };
 
 const categoryBodiesLowest = {
   physical:
     "You enjoy exercising your mind over exercising your body. You view your body as simply a means for getting around. It's your mind that gets you from A to B. You may feel anxious at times. Uncertainty is your nemesis. You prefer sticking with what you know instead of venturing into the unknown.",
   emotional:
-    "Emotions can be a tricky thing. Even at the best of times, you may find it difficult to deal with emotions - in yourself and in others. There are times you don't know how you really feel. Sometimes it is difficult to enjoy yourself. You may struggle to feel joy. ",
+    "Emotions can be a tricky thing. Even at the best of times, you may find it difficult to deal with emotions - in yourself and in others. There are times you don't know how you really feel. Sometimes it is difficult to enjoy yourself. You may struggle to feel joy.",
   cognitive:
-    "You prefer to accept things are they are instead of wondering how things can be different. You're not keen on change or new experiences. You keep your opinions to yourself. It is not easy to share what you really think. You prefer to go with the flow to avoid conflict.",
+    "You prefer to accept things as they are instead of wondering how things can be different. You're not keen on change or new experiences. You keep your opinions to yourself. It is not easy to share what you really think. You prefer to go with the flow to avoid conflict.",
   systemic:
-    "Sometimes it isn't easy to accept people and situations just as they are. You may prefer wishful thinking. You may struggle to trust yourself and your decisions. At times you feel like a fish out of water when it comes to fitting in in groups and communities.",
+    "Sometimes it isn't easy to accept people and situations just as they are. You may prefer wishful thinking. You may struggle to trust yourself and your decisions. At times you feel like a fish out of water when it comes to fitting into groups and communities.",
   social:
     "You prefer to work on your own than with others. You tend to challenge rules and boundaries because you view them as constraining rather than enabling. You don't feel supported by those around you and prefer not to ask for help even if you may need it.",
   playful:
     "Solving challenging problems can sometimes feel more like punishment than play. It's not always easy to take responsibility for your feelings, thoughts and actions. You sometimes struggle to respect yourself and / or others. It can be difficult for you to bounce back from challenges and difficulties. It is easier to hide your authentic self from others and even possibly from yourself.",
-  min: "It's possible that play doesn't come easily. Perhaps you weren't encouraged or allowed to play much as a child. Or may be there weren't many chances to enjoy yourself. Thanks to the neuroplasticity of the human mind and the incredible capacity of the human heart, it's never too late to play more as an adult. For sure, it's always a good time to start from where you are.",
+  min: "It's possible that play doesn't come easily. Perhaps you weren't encouraged or allowed to play much as a child. Or maybe there weren't many chances to enjoy yourself. Thanks to the neuroplasticity of the human mind and the incredible capacity of the human heart, it's never too late to play more as an adult. For sure, it's always a good time to start from where you are.",
 };
 
 const categoryColours = {

@@ -13,6 +13,7 @@ app.use(
     allowedHeaders: ["Content-Type"],
   })
 );
+// allow requests from frontend only
 
 app.use(bodyParser.json());
 
